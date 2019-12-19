@@ -1,0 +1,14 @@
+.titulo{
+    text-align: center;
+    }
+    .celdas {
+      border: 2px solid rgb(27, 56, 184);
+      padding: 8px;
+      margin: 2px;
+    }
+    .contenedor{
+      border: 3px solid rgb(82, 163, 71);
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
