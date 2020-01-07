@@ -40,17 +40,20 @@ function jugar(){
     contenedores.innerHTML = "";
     var num=generarNumero(0, 90);
     if ((nJugados.includes(num)|| nJugados === [])&& nJugados.length < 90 ) {
-     
+       console.log("ya existe el numero : " + serie);
         jugar();
     } else if(nJugados.length<90){
         nJugados.push(num);
-       
-   
-        console.log(nJugados[nJugados.length - 1]);
+       console.log("numero guardado",nJugados[nJugados.length - 1]);
     }else{
+         var marco=document.getElementById("mostrar");
         alert("Todos los numeros se han jugado");
     }
+     document.getElementById("verNumero").innerHTML=verNum;
 }
 function generarNumero(min, max) {
     return Math.round(Math.random() * (max - min) + min);
+}
+function mostrarNum(){
+    document.getElementById("mostrar").style.display="block";
 }
