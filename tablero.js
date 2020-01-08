@@ -22,7 +22,6 @@ function dibujoTab() {
         for (var i = 0; i < numerosJu.length; i++) {
             cont=a;
             if (numerosJu[i] === cont) {
-                //console.log("encontrado " + casillero.id + "  y " + numerosJu[b]);
                 casillero.style.backgroundColor = "pink";
             }
         }
