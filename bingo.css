@@ -1,14 +1,24 @@
-.titulo{
-    text-align: center;
-    }
-    .celdas {
-      border: 2px solid rgb(27, 56, 184);
-      padding: 8px;
-      margin: 2px;
-    }
-    .contenedor{
-      border: 3px solid rgb(82, 163, 71);
-      display: grid;
-      grid-template-rows: auto auto;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
+ .celdas {
+    border: 2px solid rgb(10, 64, 71);
+    padding: 8px;
+    margin: 2px;
+  }
+
+  .contenedor{
+    border: 3px solid rgb(212, 209, 14);
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  #botonJ{
+    padding: 15px 14px;
+    margin-left: 10%;
+    background-color: rgb(30, 59, 66);
+  }
+
+ 
+  #verNumero{
+    font-size:500%;
+    color: rgb(175, 158, 79);
+  }
