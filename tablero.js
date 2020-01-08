@@ -1,59 +1,56 @@
-var contenedores= document.getElementById("contenedor");
-
+var contenedor = document.getElementById("contenedor");
+document.getElementById("mostrar").style.display="none";
+var cont=0;
+var verNum;
 var numTablero = [];
-var nJugados=[]
-var valor = 1;
-dibujar();
-document.getElementById("boton")
-    .addEventListener("click", function() {
-jugar();
-dibujar()
-    });
+var numerosJu = [];
 
-function dibujar(){
+dibujoTab();
+document.getElementById("botonJ").addEventListener("click", function () {
+    play();
+    dibujoTab();
+    indiNum();
+});
+function dibujoTab() {
     numTablero = [];
-    for (var i = 1; i < 91; i++) {
-        numTablero.push(i);
-        var celda= document.createElement('div');
-        celda.className = 'celdas';
-        celda.id =i;
-    for (var k = 0; k < nJugados.length; k++) {
-           
-          
-    if (nJugados[k] === celda.id) {
-         console.log("encontrado " + celda.id+ "  y " + nJugados[k]);
-               
-              
-    }else{
-            
-        celda.style.backgroundColor = "#eaea06";
+    for (var a = 1; a < 91; a++) {
+        numTablero.push(a);
+        var casillero = document.createElement('div');
+        casillero.className = 'celdas';
+        casillero.id = a;
+         
+        for (var i = 0; i < numerosJu.length; i++) {
+            cont=a;
+            if (numerosJu[i] === cont) {
+                //console.log("encontrado " + casillero.id + "  y " + numerosJu[b]);
+                casillero.style.backgroundColor = "pink";
             }
-
         }
-        celda.appendChild(document.createTextNode(i));
-        contenedores.appendChild(celda);
-        
+        casillero.appendChild(document.createTextNode(a));
+        contenedor.appendChild(casillero);
+        cont++;
     }
 }
 
-function jugar(){
-    contenedores.innerHTML = "";
-    var num=generarNumero(0, 90);
-    if ((nJugados.includes(num)|| nJugados === [])&& nJugados.length < 90 ) {
-       console.log("ya existe el numero : " + serie);
-        jugar();
-    } else if(nJugados.length<90){
-        nJugados.push(num);
-       console.log("numero guardado",nJugados[nJugados.length - 1]);
-    }else{
-         var marco=document.getElementById("mostrar");
-        alert("Todos los numeros se han jugado");
+function play() {
+    contenedor.innerHTML = "";
+    var serie = genNum(0, 90);
+    if ((numerosJu.includes(serie) || numerosJu === []) && numerosJu.length < 91) {
+        alert("numero repetido" + serie);
+        play();
+    } else if (numerosJu.length <91) {
+        verNum=serie;
+        numerosJu.push(serie);
+        alert("Guardado Exitoso",numerosJu[numerosJu.length - 1]);
+    } else {
+        var marco=document.getElementById("mostrar");
+        marco.style.backgroundColor = "pink";
     }
-     document.getElementById("verNumero").innerHTML=verNum;
+    document.getElementById("verNumero").innerHTML=verNum;
 }
-function generarNumero(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-}
-function mostrarNum(){
+function indiNum(){
     document.getElementById("mostrar").style.display="block";
+}
+function genNum(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
 }
